@@ -1,9 +1,9 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="saveDetails(form)">
-        <mat-form-field appearance="fill" style="margin-top:20px;">
+        <mat-form-field appearance="fill" style="margin-top:60px;">
             <mat-label>Name</mat-label>
             <input matInput maxlength="15" inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
-            <mat-hint>Mini character 10: {{ nameInput.value.length }}/10</mat-hint>
+            <!-- <mat-hint>Mini character 10: {{ nameInput.value.length }}/10</mat-hint> -->
             <mat-error>Name is required</mat-error>
             <mat-error *ngIf="form.controls['name'].errors?.['minlength']">
                 Please enter more than 10 character
@@ -11,23 +11,23 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill" style="margin-top:20px;">
+        <mat-form-field appearance="fill" style="margin-top:10px;">
             <mat-label>Email Address:</mat-label>
             <input matInput type="email" formControlName="email" placeholder="Your email">
             <mat-icon matSuffix>mail_outline</mat-icon>
-            <mat-hint>Input the fully qualified email address</mat-hint>
+            <!-- <mat-hint>Input the fully qualified email address</mat-hint> -->
             <mat-error *ngIf="form.controls['email'].errors?.['required']">Email is required</mat-error>
             <mat-error *ngIf="form.controls['email'].errors?.['pattern']">Please enter valid email</mat-error>
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill" style="margin-top:20px;">
+        <mat-form-field appearance="fill" style="margin-top:10px;">
             <mat-label>Address:</mat-label>
             <textarea matInput placeholder="address" formControlName="address"></textarea>
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill" hintLabel="Country name required" style="margin-top:10px;">
+        <mat-form-field appearance="fill" style="margin-top:10px;">
             <mat-label>Country</mat-label>
             <mat-select matNativeControl name="country" formControlName="country">
                 <mat-option value="india">India</mat-option>
@@ -39,7 +39,7 @@
         </mat-form-field>
         <br>
 
-        <div style="margin-top:20px;">
+        <div style="margin-top:10px;">
             <div style="color:#000000;">
                 <mat-label>Gender</mat-label>
             </div>
@@ -58,7 +58,7 @@
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <div mat-dialog-actions style="align:end;">
+        <div mat-dialog-actions style="align: end;">
             <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
         </div>
     </form>
