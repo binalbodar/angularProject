@@ -1,6 +1,6 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="saveDetails(form)">
-        <mat-form-field appearance="fill" style="margin-top:60px;">
+        <mat-form-field appearance="fill" style="margin-top:50px;">
             <mat-label>Name</mat-label>
             <input matInput maxlength="15" inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
             <!-- <mat-hint>Mini character 10: {{ nameInput.value.length }}/10</mat-hint> -->
@@ -44,8 +44,8 @@
                 <mat-label>Gender</mat-label>
             </div>
             <mat-radio-group formControlName="gender">
-                <mat-radio-button matInput value="Male">Male</mat-radio-button>
-                <mat-radio-button matInput value="Female">Female</mat-radio-button>
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
             </mat-radio-group>
         </div>
         <br>
@@ -58,7 +58,7 @@
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <div mat-dialog-actions style="align: end;">
+        <div mat-dialog-actions style="align-items: end;">
             <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
         </div>
     </form>
