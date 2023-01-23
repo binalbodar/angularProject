@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of postData">
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td>
+                <a class="btn btn-info">View</a>
+                <button type="button" (click)="editRow(data)" class="btn btn-primary editbutton">Edit</button>
+                <button type="button" (click)="deletePost(data.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,68 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Document</title>
-</head>
-<body>
-  <!-- <form [formGroup]="demoData" novalidate>
-    <label>FirstName: </label>
-    <input type="text" name="firstName" formControlName="firstName" /><br>
-
-    <label>LastName: </label>
-    <input type="text" name="lastName" formControlName="lastName"/><br>
-
-    <label>Email: </label>
-    <input type="text" name="email" formControlName="email"/>
-  </form> -->
-
-  <form #templateForm="ngForm" (ngSubmit)="onSubmit(templateForm)">
- 
-    <p>
-      <label for="firstname">First Name </label>
-      <input type="text" id="firstname" name="firstname" ngModel required>
-    </p>
-    <p>
-      <label for="lastname">Last Name </label>
-      <input type="text" id="lastname" name="lastname" ngModel>
-    </p>
- 
-    <p>
-      <label for="email">Email </label>
-      <input type="text" id="email" name="email" ngModel>
-    </p>
- 
- 
-    <div ngModelGroup="address">
- 
-      <p>
-        <label for="address">Address</label>
-        <input type="text" class="form-control" name="address" ngModel>
-      </p>
- 
-      <p>
-        <label for="city">City</label>
-        <input type="text" class="form-control" name="city" ngModel>
-      </p>
- 
-      <p>
-        <label for="state">State</label>
-        <input type="text" class="form-control" name="state" ngModel>
-      </p>
-    </div>
- 
-    <p>
-      <button type="submit">Submit</button>
-    </p>
-    <div>
-    </div>
- 
-  </form>
-
-  <hr />
-
-  <!-- FirstName={{ demoData.value.firstName }}<br>
-  LastName={{ demoData.value.lastName }}<br>
-  Email={{ demoData.value.email }} -->
-
-</body>
-</html>
+<nav>
+    <ul>
+        <li><a routerLink="/" routerLinkActive="red" [routerLinkActiveOptions]="{exact:true}">Curd-Without-Api</a></li>
+        <li><a routerLink="/app-curd-api" routerLinkActive="red">Curd-Api</a></li>
+        <li><a routerLink="/Material-Form" routerLinkActive="red">Material-Form</a></li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

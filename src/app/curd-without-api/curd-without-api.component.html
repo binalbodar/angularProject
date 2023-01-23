@@ -1,0 +1,47 @@
+<div class="formtab">
+  <form [formGroup]="contactForm" id="form" name="MyForm">
+    <label for="name">Name<span style="color: red;">* </span></label>
+    <input type="text" id="name" name="name" formControlName="name" class="markinp" required />
+    <span class="error" ng-show="MyForm.Name.$dirty && MyForm.Name.$error.required"></span><br>
+
+    <label for="subject">Subject<span style="color: red;">* </span> </label>
+    <input type="text" id="subject" name="subject" formControlName="subject" required />
+    <span class="error" ng-show="MyForm.subject.$dirty && MyForm.subject.$error.required"></span><br>
+
+    <label for="marks">Marks<span style="color: red;">* </span> </label>
+    <input type="number" id="marks" name="marks" formControlName="marks" class="markinp" required />
+    <span class="error" ng-show="MyForm.marks.$dirty && MyForm.marks.$error.required"></span><br>
+
+    <button name="button" id="submit" type="button" value="Submit" (click)="onSubmit()" style="cursor:pointer"
+      class="btn btn-md btn-primary text-upper" [disabled]="!contactForm.valid">Submit</button>
+
+    <button type="clear" (click)="clearForm()" style="cursor:pointer"
+      class="btn btn-md btn-danger text-upper">Clear</button>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let student of student; index as index ">
+        <td>{{student.name}}</td>
+        <td>{{student.subject}}</td>
+        <td class="{{getClass(student.marks)}}">{{student.marks}}</td>
+        <td>
+          <button style="cursor:pointer" class="btn btn-md btn-primari text-upper"
+            (click)="editRow(student, index)">Edit</button>
+
+          <button (click)="deleteRow(index)" style="cursor:pointer"
+            class="btn btn-md btn-denger text-upper">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
