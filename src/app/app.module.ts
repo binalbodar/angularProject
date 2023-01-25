@@ -38,7 +38,6 @@ import { MaterialFormComponent } from './material-form/material-form.component';
     MatDatepickerModule,
     MatNativeDateModule,
     NgMaterialModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

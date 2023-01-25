@@ -1,0 +1,51 @@
+table {
+    border: 1px solid;
+    margin-top: 60px;
+}
+
+tr,
+th,
+td {
+    border: 1px solid;
+    padding: 3px 10px;
+    font-size: large;
+    border-radius: 5px;
+    text-align: center;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.btn-denger {
+    color: red;
+}
+
+.btn-denger:hover {
+    color: red;
+}
+
+.btn-primari {
+    color: blue;
+}
+
+.btn-primari:hover {
+    color: blue;
+}
+
+.markinp {
+    margin-left: 20px;
+}
+
+.formtab {
+    padding-left: 30px;
+}

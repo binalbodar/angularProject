@@ -1,6 +1,6 @@
-<div class="container">
-    <form [formGroup]="form" (ngSubmit)="saveDetails(form)">
-        <mat-form-field appearance="fill" style="margin-top:50px;">
+<div style="margin-left: 30px; margin-right: 10px;">
+    <form [formGroup]="form">
+        <mat-form-field appearance="fill" style="margin-top:30px;">
             <mat-label>Name</mat-label>
             <input matInput maxlength="15" inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
             <!-- <mat-hint>Mini character 10: {{ nameInput.value.length }}/10</mat-hint> -->
@@ -11,7 +11,7 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill" style="margin-top:10px;">
+        <mat-form-field appearance="fill">
             <mat-label>Email Address:</mat-label>
             <input matInput type="email" formControlName="email" placeholder="Your email">
             <mat-icon matSuffix>mail_outline</mat-icon>
@@ -21,46 +21,80 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill" style="margin-top:10px;">
+        <mat-form-field appearance="fill">
             <mat-label>Address:</mat-label>
             <textarea matInput placeholder="address" formControlName="address"></textarea>
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill" style="margin-top:10px;">
+        <mat-form-field appearance="fill">
             <mat-label>Country</mat-label>
             <mat-select matNativeControl name="country" formControlName="country">
-                <mat-option value="india">India</mat-option>
-                <mat-option value="france">France</mat-option>
-                <mat-option value="germany">Germany</mat-option>
-                <mat-option value="japan">Japan</mat-option>
+                <mat-option value="India">India</mat-option>
+                <mat-option value="France">France</mat-option>
+                <mat-option value="Germany">Germany</mat-option>
+                <mat-option value="Japan">Japan</mat-option>
                 <mat-option value="Mongolia">Mongolia</mat-option>
             </mat-select>
         </mat-form-field>
         <br>
 
-        <div style="margin-top:10px;">
-            <div style="color:#000000;">
-                <mat-label>Gender</mat-label>
+        <div>
+            <div style="color:#000000; font-weight: bold; font-size: large;">
+                <mat-label>Gender :-</mat-label>
+                <mat-radio-group formControlName="gender">
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                </mat-radio-group>
             </div>
-            <mat-radio-group formControlName="gender">
-                <mat-radio-button value="Male">Male</mat-radio-button>
-                <mat-radio-button value="Female">Female</mat-radio-button>
-            </mat-radio-group>
         </div>
         <br>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Choose a date</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="dob">
-            <mat-datepicker-toggle matSuffix [for]="picker">
+            <!-- <mat-datepicker-toggle matSuffix [for]="picker">
                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-            </mat-datepicker-toggle>
+            </mat-datepicker-toggle> -->
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <div mat-dialog-actions style="align-items: end;">
-            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+
+        <div mat-dialog-actions>
+            <button mat-raised-button type="submit" value="submit" (click)="onSubmit()" style="cursor:pointer"
+                class="btn btn-md btn-primary" [disabled]="!form.valid">Submit</button>
         </div>
     </form>
-    <div>{{ form.value | json }}</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>Gender</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let employ of employ; index as index">
+                <td>{{employ.name}}</td>
+                <td>{{employ.email}}</td>
+                <td>{{employ.address}}</td>
+                <td>{{employ.country}}</td>
+                <td>{{employ.gender}}</td>
+                <td>{{employ.dob}}</td>
+                <td>
+                    <button style="cursor:pointer" class="btn btn-md btn-primari text-upper"
+                        (click)="editRow(employ, index)">Edit</button>
+
+                    <button (click)="deleteRow(index)" style="cursor:pointer"
+                        class="btn btn-md btn-denger text-upper">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
