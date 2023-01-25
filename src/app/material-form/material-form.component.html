@@ -3,7 +3,7 @@
         <mat-form-field appearance="fill" style="margin-top:30px;">
             <mat-label>Name</mat-label>
             <input matInput maxlength="15" inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
-            <!-- <mat-hint>Mini character 10: {{ nameInput.value.length }}/10</mat-hint> -->
+            <mat-hint>Mini character 10: {{ nameInput.value.length }}/10</mat-hint>
             <mat-error>Name is required</mat-error>
             <mat-error *ngIf="form.controls['name'].errors?.['minlength']">
                 Please enter more than 10 character
@@ -15,7 +15,7 @@
             <mat-label>Email Address:</mat-label>
             <input matInput type="email" formControlName="email" placeholder="Your email">
             <mat-icon matSuffix>mail_outline</mat-icon>
-            <!-- <mat-hint>Input the fully qualified email address</mat-hint> -->
+            <mat-hint>Input the fully qualified email address</mat-hint>
             <mat-error *ngIf="form.controls['email'].errors?.['required']">Email is required</mat-error>
             <mat-error *ngIf="form.controls['email'].errors?.['pattern']">Please enter valid email</mat-error>
         </mat-form-field>
@@ -34,7 +34,7 @@
                 <mat-option value="France">France</mat-option>
                 <mat-option value="Germany">Germany</mat-option>
                 <mat-option value="Japan">Japan</mat-option>
-                <mat-option value="Mongolia">Mongolia</mat-option>
+                <mat-option value="Mongolia">Keneda</mat-option>
             </mat-select>
         </mat-form-field>
         <br>
@@ -88,11 +88,11 @@
                 <td>{{employ.gender}}</td>
                 <td>{{employ.dob}}</td>
                 <td>
-                    <button style="cursor:pointer" class="btn btn-md btn-primari text-upper"
+                    <button style="cursor:pointer" class="btn btn-md btn-primari"
                         (click)="editRow(employ, index)">Edit</button>
 
                     <button (click)="deleteRow(index)" style="cursor:pointer"
-                        class="btn btn-md btn-denger text-upper">Delete</button>
+                        class="btn btn-md btn-denger">Delete</button>
                 </td>
             </tr>
         </tbody>
