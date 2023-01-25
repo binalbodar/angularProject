@@ -59,16 +59,15 @@ export class MaterialFormComponent implements OnInit {
 
   employ: any = []
 
-
   // saveDetails(form: any) {
   //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
   // }
 }
-class employ {
-  name: string | undefined;
-  email: string | undefined;
-  address: string | undefined;
-  country: string | undefined;
-  gender: string | undefined;
-  dob: string | undefined;
-}
+// class employ {
+//   name: string | undefined;
+//   email: string | undefined;
+//   address: string | undefined;
+//   country: string | undefined;
+//   gender: string | undefined;
+//   dob: string | undefined;
+// }

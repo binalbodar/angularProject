@@ -11,36 +11,36 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Email Address:</mat-label>
+        <mat-form-field appearance="fill" style="margin-top:10px;">
+            <mat-label>Email :</mat-label>
             <input matInput type="email" formControlName="email" placeholder="Your email">
             <mat-icon matSuffix>mail_outline</mat-icon>
-            <mat-hint>Input the fully qualified email address</mat-hint>
+            <mat-hint>Input the fully qualified email</mat-hint>
             <mat-error *ngIf="form.controls['email'].errors?.['required']">Email is required</mat-error>
             <mat-error *ngIf="form.controls['email'].errors?.['pattern']">Please enter valid email</mat-error>
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" style="margin-top:10px;">
             <mat-label>Address:</mat-label>
             <textarea matInput placeholder="address" formControlName="address"></textarea>
         </mat-form-field>
         <br>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" style="margin-top:10px;">
             <mat-label>Country</mat-label>
             <mat-select matNativeControl name="country" formControlName="country">
                 <mat-option value="India">India</mat-option>
                 <mat-option value="France">France</mat-option>
                 <mat-option value="Germany">Germany</mat-option>
                 <mat-option value="Japan">Japan</mat-option>
-                <mat-option value="Mongolia">Keneda</mat-option>
+                <mat-option value="Keneda">Keneda</mat-option>
             </mat-select>
         </mat-form-field>
         <br>
 
         <div>
-            <div style="color:#000000; font-weight: bold; font-size: large;">
+            <div style="color:#000000; font-weight: bold; font-size: large; margin-top:10px;">
                 <mat-label>Gender :-</mat-label>
                 <mat-radio-group formControlName="gender">
                     <mat-radio-button value="Male">Male</mat-radio-button>
@@ -50,7 +50,7 @@
         </div>
         <br>
 
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="example-full-width" appearance="fill" style="margin-top:10px;">
             <mat-label>Choose a date</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="dob">
             <!-- <mat-datepicker-toggle matSuffix [for]="picker">
