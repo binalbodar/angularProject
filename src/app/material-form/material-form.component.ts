@@ -22,7 +22,7 @@ export class MaterialFormComponent implements OnInit {
     });
   }
   
-  edit: any;
+  edit: any = '';
 
   deleteRow(item: any) {
     this.employ.splice(item, 1);
