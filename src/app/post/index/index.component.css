@@ -1,0 +1,16 @@
+.title {
+    padding-right: 30px;
+}
+.table-id{
+    padding-left: 15px;
+}
+.header,
+th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+.button {
+    margin-bottom: 15px;
+}

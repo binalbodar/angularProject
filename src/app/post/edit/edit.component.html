@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Update Post</h1>
 
-    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+    <a href="#" routerLink="/post/index" class="btn btn-primary" style="margin-bottom: 10px;">Back</a>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
 
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="margin-top: 25px;">
             <label for="body">Body</label>
             <textarea formControlName="body" id="body" type="text" [(ngModel)]="post.body" class="form-control">
             </textarea>
@@ -22,6 +22,6 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid" style="margin-top: 10px;">Update</button>
     </form>
 </div>
