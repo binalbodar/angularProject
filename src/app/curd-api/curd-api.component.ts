@@ -20,11 +20,12 @@ export class CurdAPIComponent implements OnInit {
     })
   }
 
+  // EDIT DATA
   editRow(item: any) {
     if (item.id === 0) {
       this.curdServ.addPost(item).subscribe((newPost: any) => {
         item.id = newPost.id;
-        item.isEdit = true;
+        item.isEdit = false;
       });
     } else {
       this.curdServ.addPost(item).subscribe(() => {item.isEdit = false});
@@ -40,6 +41,7 @@ export class CurdAPIComponent implements OnInit {
     this.postData.data = [newRow, ...this.postData.data];
   }
 
+  // DELETE DATA
   deletePost(item: any) {
     this.curdServ.delete(item).subscribe(res => {
       this.postData = this.postData.filter((res: any) => res.id !== item);

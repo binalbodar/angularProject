@@ -16,20 +16,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CurdAPIComponent } from './curd-api/curd-api.component';
 import { CurdWithoutAPIComponent } from './curd-without-api/curd-without-api.component';
+import { IndexComponent } from './post/index/index.component';
+import { EditComponent } from './post/edit/edit.component';
+import { ViewComponent } from './post/view/view.component';
+import { CreateComponent } from './post/create/create.component';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurdAPIComponent,
     CurdWithoutAPIComponent,
-    MaterialFormComponent
+    MaterialFormComponent,
+    IndexComponent,
+    EditComponent,
+    ViewComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PostModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatFormFieldModule,

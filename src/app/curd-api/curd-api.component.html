@@ -5,13 +5,13 @@
         <th>Action</th>
     </thead>
     <tbody>
-        <tr *ngFor="let data of postData">
-            <td>{{data.id}}</td>
-            <td>{{data.title}}</td>
+        <tr *ngFor="let post of postData">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
             <td>
                 <a class="btn btn-info">View</a>
-                <button type="button" (click)="editRow(data)" class="btn btn-primary editbutton">Edit</button>
-                <button type="button" (click)="deletePost(data.id)" class="btn btn-danger">Delete</button>
+                <button type="button" (click)="editRow(post)" class="btn btn-primary editbutton">Edit</button>
+                <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </tbody>
