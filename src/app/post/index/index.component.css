@@ -1,9 +1,11 @@
 .title {
     padding-right: 30px;
 }
-.table-id{
+
+.table-id {
     padding-left: 15px;
 }
+
 .header,
 th {
     padding-top: 5px;
@@ -13,4 +15,28 @@ th {
 
 .button {
     margin-bottom: 15px;
+}
+
+.btn-denger {
+    color: red;
+}
+
+.btn-denger:hover {
+    color: red;
+}
+
+.btn-primari {
+    color: blue;
+}
+
+.btn-primari:hover {
+    color: blue;
+}
+
+.btn-inof {
+    color: rgb(71, 172, 172);
+}
+
+.btn-inof:hover {
+    color: rgb(71, 172, 172);
 }

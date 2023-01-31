@@ -12,10 +12,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class EditComponent implements OnInit {
 
   id!: number;
-  title!: Text;
   post!: Post;
   form!: FormGroup;
 
+  /*------------------------------------------
+  --------------------------------------------
+  Created constructor
+  --------------------------------------------
+  --------------------------------------------*/
   constructor(
     public postService: PostService,
     private route: ActivatedRoute,
