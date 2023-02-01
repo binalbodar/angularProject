@@ -13,13 +13,8 @@ export class EditComponent implements OnInit {
 
   id!: number;
   post!: Post;
-  form!: FormGroup;
+  // form!: FormGroup;
 
-  /*------------------------------------------
-  --------------------------------------------
-  Created constructor
-  --------------------------------------------
-  --------------------------------------------*/
   constructor(
     public postService: PostService,
     private route: ActivatedRoute,
@@ -35,13 +30,19 @@ export class EditComponent implements OnInit {
     this.id = this.route.snapshot.params['postId'];
     this.postService.find(this.id).subscribe((data: Post) => {
       this.post = data;
+      this.form.patchValue({
+        title: this.post.title,
+        body: this.post.body
+      })
+      console.log(this.post);
     });
 
-    this.form = new FormGroup({
-      title: new FormControl('', [Validators.required]),
-      body: new FormControl('', Validators.required)
-    });
   }
+
+  form = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    body: new FormControl('', Validators.required)
+  });
 
   /**
    * Write code on Method
@@ -60,6 +61,7 @@ export class EditComponent implements OnInit {
   submit() {
     console.log(this.form.value);
     this.postService.update(this.id, this.form.value).subscribe((res: any) => {
+      // debugger
       console.log('Post updated successfully!');
       this.router.navigateByUrl('post/index');
     })
